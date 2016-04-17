@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_valores"
+        android:title="@string/valores"/>
+    <item android:id="@+id/menu_calculo"
+        android:title="@string/divisao"/>
+</menu>
