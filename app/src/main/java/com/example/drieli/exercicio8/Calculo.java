@@ -3,6 +3,7 @@ package com.example.drieli.exercicio8;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -19,15 +20,15 @@ public class Calculo extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.calculo);
 
-        Intent intent = getIntent();
-        String valorTotal = intent.getStringExtra(Valores.EXTRA_VALOR_TOTAL);
-        String valorDividido = intent.getStringExtra(Valores.EXTRA_VALOR_DIVIDIDO);
+        Bundle b = getIntent().getExtras();
+        double valorTotal = b.getDouble("valorTotal");
+        double valorDividido = b.getDouble("valorDividido");
 
         TextView total = (TextView) findViewById(R.id.total);
-        total.setText(valorTotal);
+        total.setText(String.valueOf(valorTotal));
 
         TextView valor_dividido = (TextView) findViewById(R.id.valor_dividido);
-        valor_dividido.setText(valorDividido);
+        valor_dividido.setText(String.valueOf(valorDividido));
     }
 
     @Override

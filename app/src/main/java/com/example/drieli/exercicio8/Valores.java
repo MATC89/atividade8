@@ -68,8 +68,12 @@ public class Valores extends AppCompatActivity {
         double valorDividido = valorTotal/pessoas;
 
         Intent intent = new Intent(this, Calculo.class);
-        intent.putExtra(EXTRA_VALOR_TOTAL  , valorTotal);
-        intent.putExtra(EXTRA_VALOR_DIVIDIDO, valorDividido);
+        Bundle bValorTotal = new Bundle();
+        bValorTotal.putDouble("valorTotal", valorTotal);
+        Bundle bValorDividido = new Bundle();
+        bValorDividido.putDouble("valorDividido", valorDividido);
+        intent.putExtras(bValorTotal);
+        intent.putExtras(bValorDividido);
 
         startActivity(intent);
 
